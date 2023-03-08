@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <!-- google font style (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Alphine js light weight js library -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Animate On Scroll -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Selling - Ecommerce website</title>
+</head>
+
+<body class="font-poppins" x-data="pageData">
+    <!-- Navbar -->
+    <nav class="relative w-full " @scroll.window="showBar = (window.pageYOffset > 200) ? true : false">
+        <div class="border-b border-gray-300 hidden md:block">
+
+            <div class="container">
+                <div class="flex justify-between items-center py-5">
+                    <div class="flex gap-x-2">
+                        <span class="header_icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                        <span class="header_icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                        <span class="header_icon">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="flex items-center space-x-10">
+                        <span class="flex space-x-2 text-sm">
+                            <span class=" text-primary"><i class="fa-solid fa-envelope"></i></span>
+                            <span class="text-gray-400">info@domain.com</span>
+                        </span>
+
+                        <span class="flex space-x-2 text-sm">
+                            <span class=" text-primary"><i class="fa-solid fa-phone"></i></span>
+                            <span class="text-gray-400">+237 672367020</span>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class=""
+            :class="{'fixed w-full py-3 z-[10000] bg-white left-0 right-0 -top-96  transition duration-700 transform translate-y-96 text-black shadow-lg': showBar, 'py-5':!showBar}">
+            <div class="container">
+                <div class="flex justify-between items-center">
+
+                    <div>
+                        <img src="/assets/images/Group 1 (1).png" class="w-24" alt="">
+                    </div>
+
+                    <!-- Menu Items -->
+                    <div class="hidden space-x-6 lg:flex text-gray-400">
+                        <ul class="flex space-x-8">
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Home</a>
+                            </li>
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Products</a>
+                            </li>
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">About Us</a>
+                            </li>
+
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Special</a>
+                            </li>
+
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Pages</a>
+                                <span>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </span>
+
+                                <ul
+                                    class="absolute top-full left-0 w-44  flex flex-col p-2 shadow-lg bg-white invisible group-hover:visible transition-all z-[2000]">
+                                    <li class="p-2 text-black">
+                                        <a href="#">Something</a>
+                                    </li>
+
+                                    <li class="p-2 text-black">
+                                        <a href="#">Something</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Blog</a>
+                                <span>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </span>
+
+                                <ul
+                                    class="absolute top-full left-0 w-44  flex flex-col p-2 shadow-lg bg-white invisible group-hover:visible transition-all z-[2000]">
+                                    <li class="p-2 text-black">
+                                        <a href="#">Something</a>
+                                    </li>
+
+                                    <li class="p-2 text-black">
+                                        <a href="#">Something</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Contact</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+
+                    <!-- Hamburger Icon -->
+                    <span class="text-2xl block lg:hidden focus:outline-none text-blue-zodiac" @click="open = !open">
+                        <i class="fa-solid fa-bars" x-show="!open"></i>
+                        <i class="fa-solid fa-xmark" x-show="open"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+
+        <div class="fixed top-0 z-[60000] h-screen w-9/12 bg-alice-blue px-6 pt-10 transition-all duration-200"
+            :class="{'left-0': open, '-left-full': !open}">
+
+            <div class="mb-8">
+                <img src="/assets/images/Group 1 (1).png" class="w-24" alt="">
+            </div>
+
+
+            <ul class="flex flex-col space-y-8">
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Home</a>
+                </li>
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Services</a>
+                </li>
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">About</a>
+                </li>
+
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Pages</a>
+                    <span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </span>
+
+                    <ul
+                        class="absolute top-full left-0 w-44  flex flex-col p-2 shadow-lg bg-white invisible group-hover:visible transition-all z-[2000]">
+                        <li class="p-2 text-black">
+                            <a href="#">Something</a>
+                        </li>
+
+                        <li class="p-2 text-black">
+                            <a href="#">Something</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Blog</a>
+                    <span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </span>
+
+                    <ul
+                        class="absolute top-full left-0 w-44  flex flex-col p-2 shadow-lg bg-white invisible group-hover:visible transition-all z-[2000]">
+                        <li class="p-2 text-black">
+                            <a href="#">Something</a>
+                        </li>
+
+                        <li class="p-2 text-black">
+                            <a href="#">Something</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- <div class="lg:hidden">
+                <div id="menu"
+                    class="absolute flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+                    :class="open ? 'flex' : 'hidden'">
+                    <a href="/#home" class="nav-link hover:text-darkGrayishBlue">Home</a>
+                    <a href="/#about" class="nav-link hover:text-darkGrayishBlue">About Us</a>
+                    <a href="/#howItWorks" class="nav-link hover:text-darkGrayishBlue">How It Works</a>
+                    <a href="/#team" class="nav-link hover:text-darkGrayishBlue">Team</a>
+                    <a href="/#services" class="nav-link hover:text-darkGrayishBlue">Services</a>
+                    <a href="/#blog" class="nav-link hover:text-darkGrayishBlue">Blog</a>
+                    <a href="/#contact" class="nav-link hover:text-darkGrayishBlue">Contact</a>
+                </div>
+            </div> -->
+    </nav>
+    <!-- End of Navbar -->
+
+    <!-- Hero Section -->
+    <section style="background-image: url('assets/images/hero_2.jpg.webp'); background-position: 50% -25px;"
+        class="h-[400px] md:h-[700px] lg:h-screen  bg-cover bg-center relative mb-2 md:mb-12">
+
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+        <div class="container h-full flex flex-col justify-center">
+            <div class=" w-7/12 flex justify-center flex-col z-20 relative">
+
+                <h1 class="uppercase text-2xl md:text-3xl lg:text-7xl font-bold text-white mb-6 ">
+                    Shop With Us
+                </h1>
+                <p class=" text-white text-base md:text-lg uppercase mb-12">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.</p>
+
+                <div>
+                    <a href="/track_order.html" class="bg-primary px-8 py-3 text-white text-base uppercase inline">Shop
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Hero Section -->
+
+    <!-- Products Section -->
+    <section id="services" class="section">
+        <div class="container">
+
+            <div class="flex flex-wrap justify-center">
+                <!-- Section Title -->
+                <div class="flex flex-col w-full md:w-6/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-400 text-sm mb-2">POPULAR PRODUCTS</h5>
+                    <h5 class="text-black text-4xl font-bold mb-5">Our Products</h5>
+                    <p class="text-center text-gray-400 text-sm font-light">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi
+                        fuga
+                        ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.
+                    </p>
+                </div>
+
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+
+                    <template x-for="item in 6">
+                        <div class="flex flex-col group">
+                            <div
+                                class="h-48 md:h-56 lg:h-[24rem] w-full bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden relative">
+
+                                <img src="./assets/images/person_1.jpg.webp"
+                                    class="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all duration-400"
+                                    alt="">
+
+                                <div
+                                    class="absolute z-10 border-4 border-primary w-[95%] h-[95%] invisible group-hover:visible opacity-0 group-hover:opacity-100 group-hover:scale-90 transition-all duration-500">
+                                </div>
+
+                            </div>
+                            <a href="./single_post.html"
+                                class="text-black text-center hover:text-primary transition-colors duration-150 text-lg md:text-xl mb-1">
+                                Wild West Hoodie</a>
+                            <div class="flex justify-center gap-x-3 text-base font-light mb-3">
+                                <span class="flex gap-1">
+                                    <span class="text-orange-500"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-gray-500">5.0</span>
+                                </span>
+
+                                <span class="flex gap-1">
+                                    <span class="text-red-500"><i class="fa-solid fa-heart"></i></span>
+                                    <span class="text-gray-500">4.0</span>
+                                </span>
+
+
+                            </div>
+
+                            <p class="mb-4 font-light  text-sm md:text-sm text-center text-gray-400">Lorem ipsum dolor
+                                sit
+                                amet, consectetur adipisicing.</p>
+
+                            <div class="flex justify-center gap-x-3">
+                                <a href="/track_order.html"
+                                    class=" button outline-none bg-black border-black text-white hover:text-black hover:bg-white font-bold">
+                                    Cart</a>
+                                <a href="/track_order.html"
+                                    class="button outline-none bg-white border-black text-black hover:text-white hover:bg-black font-bold">
+                                    View</a>
+                            </div>
+
+                        </div>
+                    </template>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End of Products Section -->
+
+    <!-- Email update section -->
+    <section style="background-image: url('assets/images/hero_2.jpg.webp'); background-position: 50% -25px;"
+        class="h-[400px]  bg-cover bg-center relative">
+
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+        <div class="container h-full flex flex-col justify-center">
+            <div class=" w-7/12 flex justify-center flex-col z-20 relative">
+
+                <h1 class="uppercase text-2xl md:text-3xl font-bold text-white mb-6 ">
+                    Get notified on each updates.
+                </h1>
+                <div class="mb-6 flex">
+                    <input class="text-white border-2 border-white outline-none bg-transparent block p-3"
+                        placeholder="Enter your email address" type="text">
+                    <button
+                        class="p-3 text-white border-2 border-white hover:bg-white hover:text-black">Subscribe</button>
+                </div>
+                <p class=" text-white text-sm md:text-base uppercase mb-12">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Fugiat commodi veniam doloremque ducimus tempora.</p>
+            </div>
+        </div>
+    </section>
+    <!-- End of email update section -->
+
+
+    <!-- Featured Products section -->
+    <section id="services" class="section bg-gray-100">
+        <div class="container">
+
+            <div class="flex flex-wrap justify-center">
+                <!-- Section Title -->
+                <div class="flex flex-col w-full md:w-6/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-400 text-sm mb-2">AWESOME PRODUCTS</h5>
+                    <h5 class="text-black text-4xl font-bold mb-5">Featured Products</h5>
+                    <p class="text-center text-gray-400 text-sm font-light">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi
+                        fuga
+                        ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.
+                    </p>
+                </div>
+
+                <div class="w-full">
+
+                    <div class="bg-white p-10 flex gap-x-12 w-full mb-4">
+                        <div
+                            class="h-48 md:h-56 lg:h-[32rem] w-full shrink-0 md:w-6/12 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden relative">
+
+                            <img src="./assets/images/person_1.jpg.webp"
+                                class="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all duration-400"
+                                alt="">
+
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute top-0 left-0 ">
+                                <span class="text-[120px] font-bold text-gray-300/50">01.</span>
+                            </div>
+                            <div class="relative z-10">
+                                <h5 class="mb-4 font-bold text-lg md:text-xl lg:text-2xl">About This Product</h5>
+                                <p class="mb-5 text-gray-400 leading-8">
+                                    Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate
+                                    asperiores
+                                    quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure
+                                    blanditiis earum fuga molestiae alias dicta perferendis inventore!
+
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda
+                                    sed
+                                    optio, error at?
+                                </p>
+
+                                <h5 class="mb-3 text-black font-bold text-lg">Price:</h5>
+
+                                <div class=" mb-5 flex gap-x-4  text-lg">
+                                    <h4 class="text-gray-300"><strike>$269.00</strike></h4>
+                                    <h4 class="text-gray-400">$200.00</h4>
+
+                                </div>
+
+                                <div class="flex gap-x-3">
+                                    <a href="/track_order.html"
+                                        class=" button outline-none bg-black border-black text-white hover:text-black hover:bg-white font-bold">
+                                        View Details</a>
+                                    <a href="/track_order.html"
+                                        class="button outline-none bg-white border-black text-black hover:text-white hover:bg-black font-bold">
+                                        Add to Cart</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-10 flex gap-x-12 w-full">
+
+
+                        <div class="relative">
+                            <div class="absolute top-0 left-0 ">
+                                <span class="text-[120px] font-bold text-gray-300/50">02.</span>
+                            </div>
+                            <div class="relative z-10">
+                                <h5 class="mb-4 font-bold text-lg md:text-xl lg:text-2xl">About This Product</h5>
+                                <p class="mb-5 text-gray-400 leading-8">
+                                    Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate
+                                    asperiores
+                                    quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure
+                                    blanditiis earum fuga molestiae alias dicta perferendis inventore!
+
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda
+                                    sed
+                                    optio, error at?
+                                </p>
+
+                                <h5 class="mb-3 text-black font-bold text-lg">Price:</h5>
+
+                                <div class=" mb-5 flex gap-x-4  text-lg">
+                                    <h4 class="text-gray-300"><strike>$269.00</strike></h4>
+                                    <h4 class="text-gray-400">$200.00</h4>
+
+                                </div>
+
+                                <div class="flex gap-x-3">
+                                    <a href="/track_order.html"
+                                        class=" button outline-none bg-black border-black text-white hover:text-black hover:bg-white font-bold">
+                                        View Details</a>
+                                    <a href="/track_order.html"
+                                        class="button outline-none bg-white border-black text-black hover:text-white hover:bg-black font-bold">
+                                        Add to Cart</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="h-48 md:h-56 lg:h-[32rem] w-full shrink-0 md:w-6/12 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden relative">
+
+                            <img src="./assets/images/person_1.jpg.webp"
+                                class="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all duration-400"
+                                alt="">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End of Featured Products section -->
+
+    <!-- Section About Us -->
+    <section id="about-us" class="section">
+        <div class="container">
+            <div class="flex gap-x-16 items-center">
+                <div
+                    class="h-48 md:h-56 lg:h-[32rem] w-full shrink-0 md:w-7/12 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden relative">
+
+                    <img src="./assets/images/person_1.jpg.webp"
+                        class="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all duration-400"
+                        alt="">
+
+                </div>
+
+                <div>
+                    <div class="flex flex-col mb-8">
+                        <h5 class="uppercase text-gray-400 text-sm mb-2">MERCHANT COMPANY</h5>
+                        <h5 class="text-black text-4xl font-bold mb-5">About Us</h5>
+                        <p class=" text-gray-400 text-sm font-light mb-6">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui fuga ipsa, repellat blanditiis
+                            nihil, consectetur. Consequuntur eum inventore, rem maxime, nisi excepturi ipsam libero
+                            ratione adipisci alias eius vero vel!
+                        </p>
+
+                        <div>
+                            <a href="/track_order.html"
+                                class=" button outline-none bg-black border-black text-white hover:text-black hover:bg-white inline-block">
+                                Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Section About Us -->
+
+    <!--Team Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <div class="flex flex-wrap justify-center">
+                <!-- Section Title -->
+                <div class="flex flex-col w-full md:w-6/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-400 text-sm mb-2">Team</h5>
+                    <h5 class="text-black text-4xl font-bold mb-5">Leadership</h5>
+                </div>
+            </div>
+
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+                <template x-for="item in 3">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 ">
+
+                            <img src="./assets/images/person_1.jpg.webp" alt="">
+
+                        </div>
+
+                        <h2 class="mb-1 md:mb-2 font-bold text-base md:text-lg">Christine Rooster</h2>
+                        <h5 class="text-gray-400 mb-4 font-thin text-xs md:text-sm">Co-founder, president</h5>
+
+                        <p class="mb-4 font-light text-center text-sm text-gray-400">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+                        <div class="flex space-x-2">
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-twitter"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+    <!-- End of Team Section -->
+
+    <!-- Special Promo Section -->
+    <section style="background-image: url('assets/images/hero_2.jpg.webp'); background-position: 50% -25px;"
+        class="h-[400px] md:h-[700px] lg:h-screen  bg-cover bg-center relative mb-2 md:mb-12">
+
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+        <div class="container h-full flex flex-col justify-center">
+
+
+            <div class="relative z-20 flex justify-center">
+                <div class="flex flex-col w-full md:w-7/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-200 text-base mb-2">SPECIAL PROMO</h5>
+                    <h5 class="text-white text-4xl font-bold mb-5">Summer Sale</h5>
+                    <p class="mb-10 text-center text-white text-base md:text-lg font-light">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi
+                        fuga
+                        ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.
+                    </p>
+
+                    <div class="mb-10 flex  justify-center gap-x-5">
+                        <div
+                            class="flex flex-col justify-center items-center gap-y-3 p-3 rounded-md overflow-hidden bg-white">
+                            <p class="text-xl md:text-3xl lg:text-5xl text-green-500">00</p>
+                            <h6 class="text-gray-400 text-sm">Weeks</h6>
+                        </div>
+
+                        <div
+                            class="flex flex-col justify-center items-center gap-y-3 p-3 rounded-md overflow-hidden bg-white">
+                            <p class="text-xl md:text-3xl lg:text-5xl text-green-500">00</p>
+                            <h6 class="text-gray-400 text-sm">days</h6>
+                        </div>
+
+                        <div
+                            class="flex flex-col justify-center items-center gap-y-3 p-3 rounded-md overflow-hidden bg-white">
+                            <p class="text-xl md:text-3xl lg:text-5xl text-green-500">00</p>
+                            <h6 class="text-gray-400 text-sm">hr</h6>
+                        </div>
+
+                        <div
+                            class="flex flex-col justify-center items-center gap-y-3 p-3 rounded-md overflow-hidden bg-white">
+                            <p class="text-xl md:text-3xl lg:text-5xl text-green-500">00</p>
+                            <h6 class="text-gray-400 text-sm">min</h6>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="/track_order.html"
+                            class=" button outline-none bg-black border-black text-white hover:text-black hover:bg-white font-bold">
+                            Shop Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End of Special Promo Section -->
+
+    <!--Testimonial Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <div class="flex flex-wrap justify-center">
+                <!-- Section Title -->
+                <div class="flex flex-col w-full md:w-6/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-400 text-sm mb-2">People Says</h5>
+                    <h5 class="text-black text-4xl font-bold mb-5">Testimonials</h5>
+                </div>
+            </div>
+
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+                <template x-for="item in 3">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-3 md:mb-5 overflow-hidden">
+
+                            <img src="./assets/images/person_1.jpg.webp" class="w-full h-full object-cover" alt="">
+
+                        </div>
+
+                        <p class="mb-4 font-light text-center text-base italic">"Lorem ipsum
+                            dolor
+                            sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam."</p>
+
+                        <h6>- Christine Rooster</h6>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+    <!-- End of Testimonial Section -->
+
+
+    <!--Blog Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <div class="flex flex-wrap justify-center">
+                <!-- Section Title -->
+                <div class="flex flex-col w-full md:w-6/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-400 text-sm mb-2">Blog</h5>
+                    <h5 class="text-black text-4xl font-bold mb-5">Blog Post</h5>
+                </div>
+            </div>
+
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+                <template x-for="item in 3">
+                    <div class="flex flex-col">
+                        <div
+                            class="h-48 md:h-56 lg:h-64 w-full bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden">
+
+                            <img src="./assets/images/person_1.jpg.webp" class="object-cover w-full h-full" alt="">
+
+                        </div>
+                        <a href="./single_post.html" class="text-black text-lg md:text-xl mb-1">How Logistics Company
+                            Improve
+                            Spendings</a>
+                        <div class="flex items-center space-x-3  mb-2 md:mb-4 md:text-sm font-light text-gray-400">
+                            <span>by Jed Wilson</span> <span class="text-[5px]"><i
+                                    class="fa-solid fa-circle"></i></span> <span>Jan 18, 2019</span> <span
+                                class="text-[5px]"><i class="fa-solid fa-circle"></i></span> <span
+                                class="text-primary">News</span>
+                        </div>
+
+                        <p class="mb-4 font-light  text-sm md:text-base">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            minus illum molestiae odit explicabo ipsum nam.</p>
+
+                        <a href="#" class="text-primary text-lg">Continue Reading ...</a>
+
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+    <!-- End of Blog Section -->
+
+    <!-- Contact section -->
+    <section id="services" class="section bg-gray-100">
+        <div class="container">
+
+            <div class="flex flex-wrap justify-center">
+                <!-- Section Title -->
+                <div class="flex flex-col w-full md:w-6/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-400 text-sm mb-2">CONTACT FORM</h5>
+                    <h5 class="text-black text-4xl font-bold mb-5">Get In Touch</h5>
+                </div>
+
+                <div class="w-full flex justify-center">
+                    <div class="bg-white p-10 w-full md:w-8/12">
+                        <h5 class="text-xl text-black mb-10">Contact Form</h5>
+
+                        <div>
+                            <form>
+                                <div class="grid grid-cols-1 gap-y-4">
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-3">
+                                        <div class="flex flex-col">
+                                            <h6 class="mb-1">First Name</h6>
+                                            <input type="text" class="input">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <h6 class="mb-1">Last Name</h6>
+                                            <input type="text" class="input">
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <h6 class="mb-1">Email</h6>
+                                        <input type="email" class="input">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <h6 class="mb-1">Subject</h6>
+                                        <input type="text" class="input">
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <h6 class="mb-1">Message</h6>
+                                        <textarea name="" id="" cols="30" rows="5" class="input"></textarea></textarea>
+                                    </div>
+
+                                    <div class="flex">
+                                        <button class="bg-primary px-8 py-3 text-white text-base uppercase">Send
+                                            Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End of Contact section -->
+
+
+    <!-- Footer section -->
+    <footer class="section">
+        <div class="container p-6">
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 pb-10 md:pb-20 border-b border-gray-300">
+
+                <div class="w-full md:w-4/12 flex flex-col space-y-4">
+                    <h4 class="text-bold text-black text-lg">About</h4>
+                    <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                        facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                </div>
+
+                <div class="w-full md:w-8/12 flex flex-col md:flex-row space-y-4 md:space-y-0 justify-end">
+                    <div class="flex flex-col space-y-4 md:mr-16 lg:mr-32">
+                        <h4 class="text-bold text-black text-lg">Quick Links</h4>
+                        <div class="flex flex-col space-y-3">
+                            <a href="" class="text-gray-500 text-base hover:underline transition-all">About Us</a>
+                            <a href="" class="text-gray-500 text-base">Services</a>
+
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col space-y-5">
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-bold text-black text-lg">Follow Us</h4>
+                            <div class="flex space-x-4 text-gray-500 text-lg">
+                                <a href="">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="pt-10 text-center text-gray-400 text-sm md:text-base">Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+                with <span class="text-red-500"><i class="fa-solid fa-heart"></i></span> by <span
+                    class="text-gray-500">Mr.Arc</span>
+            </p>
+        </div>
+    </footer>
+    <!-- End of footer section -->
+
+
+</body>
+
+<script>
+
+
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('pageData', () => ({
+
+            open: false,
+            showBar: true,
+            showSplash: false,
+
+            toggleSplash() {
+                setTimeout(() => {
+                    this.showSplash = true
+                }, 1000);
+            }
+        }))
+    })
+
+
+</script>
+
+</html>
